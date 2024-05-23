@@ -12,13 +12,12 @@ const Auth = () => {
   let from = location?.state?.from?.pathname || "/";
 
   if (user.token) {
-    return window.location.replace(from);
+    return <Navigate to={from} replace />;
   }
 
   return (
-    <div className='w-full '>
-      <img src={Office} alt='Office' className='object-contain ' />
-      
+    <div className='w-full'>
+      <img src={Office} alt='Office' className='object-contain' />
       <SignUp open={open} setOpen={setOpen} />
     </div>
   );
