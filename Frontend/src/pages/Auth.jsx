@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { Office } from "../assets";
@@ -11,7 +11,7 @@ const Auth = () => {
 
   let from = location?.state?.from?.pathname || "/";
 
-  if (user && user.token) {
+  if (user.token) {
     return window.location.replace(from);
   }
 

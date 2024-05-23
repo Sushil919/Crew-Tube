@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from "react";
+import { Fragment, useState } from "react";
+import PropTypes from "prop-types";
 import { Dialog, Transition } from "@headlessui/react";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
@@ -27,7 +28,10 @@ const SignUp = ({ open, setOpen }) => {
 
   const closeModal = () => setOpen(false);
 
-  const onSubmit = () => {};
+  const onSubmit = () => {
+    // Handle form submission logic here
+    
+  };
 
   return (
     <>
@@ -246,6 +250,11 @@ const SignUp = ({ open, setOpen }) => {
       </Transition>
     </>
   );
+};
+
+SignUp.propTypes = {
+  open: PropTypes.bool.isRequired,
+  setOpen: PropTypes.func.isRequired,
 };
 
 export default SignUp;

@@ -1,4 +1,5 @@
-import React, { Fragment, useState } from "react";
+import PropTypes from 'prop-types';
+import { Fragment, useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { BiChevronDown } from "react-icons/bi";
 import { CgProfile } from "react-icons/cg";
@@ -96,6 +97,18 @@ function MenuList({ user, onClick }) {
   );
 }
 
+MenuList.propTypes = {
+  user: PropTypes.shape({
+    firstName: PropTypes.string,
+    name: PropTypes.string,
+    jobTitle: PropTypes.string,
+    email: PropTypes.string,
+    profileUrl: PropTypes.string,
+    accountType: PropTypes.string,
+  }).isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
 const Navbar = () => {
   const user = useSelector((state) => state.user);
   const [isOpen, setIsOpen] = useState(false);
@@ -119,10 +132,10 @@ const Navbar = () => {
               <Link to="/">Showcase Talent</Link>
             </li>
             <li>
-              <Link to="/creators">Browse Creators</Link>
+              <Link to="/companies">Browse Creators</Link>
             </li>
             <li>
-              <Link to="/post-job">Post a Job</Link>
+              <Link to="/upload-job">Post a Job</Link>
             </li>
             <li>
               <Link to="/about-us">About Us</Link>
@@ -139,7 +152,7 @@ const Navbar = () => {
               </Link>
             ) : (
               <div>
-                <MenuList user={user} />
+                <MenuList user={user} onClick={handleCloseNavbar} />
               </div>
             )}
           </div>
@@ -161,11 +174,16 @@ const Navbar = () => {
           <Link to="/" onClick={handleCloseNavbar}>
             Showcase Talent
           </Link>
-          <Link to="/creators" onClick={handleCloseNavbar}>
+          <Link to="/companies" onClick={handleCloseNavbar}>
             Browse Creators
           </Link>
-          <Link to="/post-job" onClick={handleCloseNavbar}>
-            Post a Job
+          <Link
+            onClick={handleCloseNavbar}
+            to={
+              user?.accountType === "seeker" ? "applly-gistory" : "upload-job"
+            }
+          >
+            {user?.accountType === "seeker" ? "Applications" : "Upload Job"}
           </Link>
           <Link to="/about-us" onClick={handleCloseNavbar}>
             About Us
