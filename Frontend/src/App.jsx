@@ -4,16 +4,16 @@ import { About, AuthPage, Companies, CompanyProfile, FindJobs, JobDetail, Upload
 import { useSelector } from "react-redux";
 
 // Layout component to handle protected routes
-function Layout() {
-  const user = useSelector((state) => state.user.user); // Updated selector to access user object correctly
-  const location = useLocation();
+// function Layout() {
+//   const user = useSelector((state) => state.user.user); // Updated selector to access user object correctly
+//   const location = useLocation();
 
-  return user?.token ? (
-    <Outlet />
-  ) : (
-    <Navigate to='/user-auth' state={{ from: location }} replace />
-  );
-}
+//   return user?.token ? (
+//     <Outlet />
+//   ) : (
+//     <Navigate to='/user-auth' state={{ from: location }} replace />
+//   );
+// }
 
 function App() {
   return (
