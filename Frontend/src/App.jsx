@@ -21,7 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         {/* Protected routes */}
-        <Route element={<Layout />}>
+        <Route>
           <Route path='/' element={<Navigate to='/find-jobs' replace />} />
           <Route path='/find-jobs' element={<FindJobs />} />
           <Route path='/companies' element={<Companies />} />
