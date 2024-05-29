@@ -2,253 +2,220 @@ import { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import { Dialog, Transition } from "@headlessui/react";
 import { useForm } from "react-hook-form";
-import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import TextInput from "./TextInput";
 import CustomButton from "./CustomButton";
+import { login } from "../redux/userSlice";
 
 const SignUp = ({ open, setOpen }) => {
   const dispatch = useDispatch();
-  const location = useLocation();
-
   const [isRegister, setIsRegister] = useState(true);
   const [accountType, setAccountType] = useState("seeker");
-
   const [errMsg, setErrMsg] = useState("");
+
   const {
     register,
     handleSubmit,
     getValues,
-    watch,
     formState: { errors },
   } = useForm({
     mode: "onChange",
   });
-  let from = location.state?.from?.pathname || "/";
 
   const closeModal = () => setOpen(false);
 
-  const onSubmit = () => {
+  const onSubmit = (data) => {
     // Handle form submission logic here
-    
+    dispatch(login({ user: data })); // Dispatch login action
   };
 
   return (
-    <>
-      <Transition appear show={open || false}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
-          </Transition.Child>
+    <Transition appear show={open}>
+      <Dialog as="div" className="relative z-10" onClose={closeModal}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black bg-opacity-25" />
+        </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-xl font-semibold leading-6 text-gray-900"
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Title
+                  as="h3"
+                  className="text-xl font-semibold leading-6 text-gray-900"
+                >
+                  {isRegister ? "Create Account" : "Account Sign In"}
+                </Dialog.Title>
+
+                <div className="w-full flex items-center justify-center py-4">
+                  <button
+                    className={`flex-1 px-4 py-2 rounded text-sm outline-none ${
+                      accountType === "seeker"
+                        ? "bg-red-600 text-white font-semibold"
+                        : "bg-white border border-gray-300"
+                    }`}
+                    onClick={() => setAccountType("seeker")}
                   >
-                    {isRegister ? "Create Account" : "Account Sign In"}
-                  </Dialog.Title>
-
-                  <div className="w-full flex items-center justify-center py-4">
-                    <button
-                      className={`flex-1 px-4 py-2 rounded text-sm outline-none ${
-                        accountType === "seeker"
-                          ? "bg-red-600 text-white font-semibold"
-                          : "bg-white border border-gray-300"
-                      }`}
-                      onClick={() => setAccountType("seeker")}
-                    >
-                      User Account
-                    </button>
-                    <button
-                      className={`flex-1 px-4 py-2 rounded text-sm outline-none ${
-                        accountType !== "seeker"
-                          ? "bg-red-600 text-white font-semibold"
-                          : "bg-white border border-gray-300"
-                      }`}
-                      onClick={() => setAccountType("company")}
-                    >
-                      Company Account
-                    </button>
-                  </div>
-
-                  <form
-                    className="w-full flex flex-col gap-5"
-                    onSubmit={handleSubmit(onSubmit)}
+                    User Account
+                  </button>
+                  <button
+                    className={`flex-1 px-4 py-2 rounded text-sm outline-none ${
+                      accountType !== "seeker"
+                        ? "bg-red-600 text-white font-semibold"
+                        : "bg-white border border-gray-300"
+                    }`}
+                    onClick={() => setAccountType("company")}
                   >
-                    <TextInput
-                      name="email"
-                      label="Email Address"
-                      placeholder="email@example.com"
-                      type="email"
-                      register={register("email", {
-                        required: "Email Address is required!",
-                      })}
-                      error={errors.email ? errors.email.message : ""}
-                    />
+                    Company Account
+                  </button>
+                </div>
 
-                    {isRegister && (
-                      <div className="w-full flex gap-1 md:gap-2">
-                        <div
-                          className={`${
-                            accountType === "seeker" ? "w-1/2" : "w-full"
-                          }`}
-                        >
-                          <TextInput
-                            name={
-                              accountType === "seeker" ? "firstName" : "name"
-                            }
-                            label={
-                              accountType === "seeker"
-                                ? "First Name"
-                                : "Company Name"
-                            }
-                            placeholder={
-                              accountType === "seeker"
-                                ? "eg. James"
-                                : "Company name"
-                            }
-                            type="text"
-                            register={register(
-                              accountType === "seeker" ? "firstName" : "name",
-                              {
-                                required:
-                                  accountType === "seeker"
-                                    ? "First Name is required"
-                                    : "Company Name is required",
-                              }
-                            )}
-                            error={
-                              accountType === "seeker"
-                                ? errors.firstName
-                                  ? errors.firstName?.message
-                                  : ""
-                                : errors.name
-                                ? errors.name?.message
-                                : ""
-                            }
-                          />
-                        </div>
+                <form
+                  className="w-full flex flex-col gap-5"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
+                  <TextInput
+                    name="email"
+                    label="Email Address"
+                    placeholder="email@example.com"
+                    type="email"
+                    register={register("email", {
+                      required: "Email Address is required!",
+                    })}
+                    error={errors.email ? errors.email.message : ""}
+                  />
 
-                        {accountType === "seeker" && isRegister && (
-                          <div className="w-1/2">
-                            <TextInput
-                              name="lastName"
-                              label="Last Name"
-                              placeholder="Wagonner"
-                              type="text"
-                              register={register("lastName", {
-                                required: "Last Name is required",
-                              })}
-                              error={
-                                errors.lastName ? errors.lastName?.message : ""
-                              }
-                            />
-                          </div>
-                        )}
-                      </div>
-                    )}
-
+                  {isRegister && (
                     <div className="w-full flex gap-1 md:gap-2">
-                      <div className={`${isRegister ? "w-1/2" : "w-full"}`}>
+                      <div
+                        className={`${
+                          accountType === "seeker" ? "w-1/2" : "w-full"
+                        }`}
+                      >
                         <TextInput
-                          name="password"
-                          label="Password"
-                          placeholder="Password"
-                          type="password"
-                          register={register("password", {
-                            required: "Password is required!",
-                          })}
+                          name={
+                            accountType === "seeker" ? "firstName" : "name"
+                          }
+                          label={
+                            accountType === "seeker"
+                              ? "First Name"
+                              : "Company Name"
+                          }
+                          placeholder={
+                            accountType === "seeker"
+                              ? "eg. James"
+                              : "Company name"
+                          }
+                          type="text"
+                          register={register(
+                            accountType === "seeker" ? "firstName" : "name",
+                            {
+                              required:
+                                accountType === "seeker"
+                                  ? "First name is required!"
+                                  : "Company name is required!",
+                            }
+                          )}
                           error={
-                            errors.password ? errors.password?.message : ""
+                            accountType === "seeker"
+                              ? errors.firstName
+                                ? errors.firstName.message
+                                : ""
+                              : errors.name
+                              ? errors.name.message
+                              : ""
                           }
                         />
                       </div>
-
-                      {isRegister && (
+                      {accountType === "seeker" && (
                         <div className="w-1/2">
                           <TextInput
-                            label="Confirm Password"
-                            placeholder="Password"
-                            type="password"
-                            register={register("cPassword", {
-                              validate: (value) => {
-                                const { password } = getValues();
-
-                                if (password !== value) {
-                                  return "Passwords do not match";
-                                }
-                              },
+                            name="lastName"
+                            label="Last Name"
+                            placeholder="eg. Bond"
+                            type="text"
+                            register={register("lastName", {
+                              required: "Last name is required!",
                             })}
                             error={
-                              errors.cPassword &&
-                              errors.cPassword.type === "validate"
-                                ? errors.cPassword?.message
-                                : ""
+                              errors.lastName ? errors.lastName.message : ""
                             }
                           />
                         </div>
                       )}
                     </div>
+                  )}
 
-                    {errMsg && (
-                      <span
-                        role="alert"
-                        className="text-sm text-red-500 mt-0.5"
-                      >
-                        {errMsg}
-                      </span>
-                    )}
+                  <TextInput
+                    name="password"
+                    label="Password"
+                    placeholder="******"
+                    type="password"
+                    register={register("password", {
+                      required: "Password is required!",
+                    })}
+                    error={errors.password ? errors.password.message : ""}
+                  />
 
-                    <div className="mt-2">
-                      <CustomButton
-                        type="submit"
-                        containerStyles={`inline-flex justify-center rounded-md bg-red-600 px-8 py-2 text-sm font-medium text-white outline-none hover:bg-red-700`}
-                        title={isRegister ? "Create Account" : "Login Account"}
-                      />
-                    </div>
-                  </form>
+                  {isRegister && (
+                    <TextInput
+                      name="confirm-password"
+                      label="Confirm Password"
+                      placeholder="******"
+                      type="password"
+                      register={register("confirm-password", {
+                        required: "Confirm your password!",
+                        validate: {
+                          value: (value) =>
+                            value === getValues().password ||
+                            "Passwords do not match!",
+                        },
+                      })}
+                      error={
+                        errors["confirm-password"]
+                          ? errors["confirm-password"].message
+                          : ""
+                      }
+                    />
+                  )}
 
-                  <div className="mt-4">
-                    <p className="text-sm text-gray-700">
-                      {isRegister
-                        ? "Already have an account?"
-                        : "Do not have an account?"}
+                  <CustomButton
+                    title={isRegister ? "Create Account" : "Login"}
+                    type="submit"
+                    className="w-full bg-primary-green mt-4"
+                  />
 
-                      <span
-                        className="text-sm text-red-600 ml-2 hover:text-red-700 hover:font-semibold cursor-pointer"
-                        onClick={() => setIsRegister((prev) => !prev)}
-                      >
-                        {isRegister ? "Login" : "Create Account"}
-                      </span>
-                    </p>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
+                  <p
+                    className="self-start text-primary-green text-sm cursor-pointer"
+                    onClick={() => setIsRegister(!isRegister)}
+                  >
+                    {isRegister
+                      ? "Already have an account? Login"
+                      : "Create Account"}
+                  </p>
+                </form>
+              </Dialog.Panel>
+            </Transition.Child>
           </div>
-        </Dialog>
-      </Transition>
-    </>
+        </div>
+      </Dialog>
+    </Transition>
   );
 };
 
@@ -258,3 +225,4 @@ SignUp.propTypes = {
 };
 
 export default SignUp;
+

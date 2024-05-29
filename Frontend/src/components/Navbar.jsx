@@ -10,7 +10,9 @@ import CustomButton from "./CustomButton";
 import { useSelector } from "react-redux";
 
 function MenuList({ user, onClick }) {
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    // Dispatch logout action
+  };
 
   return (
     <div>
@@ -110,7 +112,7 @@ MenuList.propTypes = {
 };
 
 const Navbar = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.user); // Corrected user selector
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCloseNavbar = () => {

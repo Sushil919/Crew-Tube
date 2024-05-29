@@ -3,8 +3,9 @@ import { Footer, Navbar } from "./components";
 import { About, AuthPage, Companies, CompanyProfile, FindJobs, JobDetail, UploadJob, UserProfile } from "./pages";
 import { useSelector } from "react-redux";
 
+// Layout component to handle protected routes
 function Layout() {
-  const { user } = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.user); // Updated selector to access user object correctly
   const location = useLocation();
 
   return user?.token ? (
@@ -19,6 +20,7 @@ function App() {
     <main className='bg-[#f7fdfd]'>
       <Navbar />
       <Routes>
+        {/* Protected routes */}
         <Route element={<Layout />}>
           <Route path='/' element={<Navigate to='/find-jobs' replace />} />
           <Route path='/find-jobs' element={<FindJobs />} />
@@ -28,6 +30,7 @@ function App() {
           <Route path='/upload-job' element={<UploadJob />} />
           <Route path='/job-detail/:id' element={<JobDetail />} />
         </Route>
+        {/* Public routes */}
         <Route path='/about-us' element={<About />} />
         <Route path='/user-auth' element={<AuthPage />} />
       </Routes>
