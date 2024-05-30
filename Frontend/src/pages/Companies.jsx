@@ -22,7 +22,7 @@ const Companies = () => {
   return (
     <div className='w-full'>
       <Header
-        title='Find Your Dream Company'
+        title='Find Your Dream Channel'
         handleClick={handleSearchSubmit}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
