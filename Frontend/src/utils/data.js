@@ -38,16 +38,16 @@ export const jobs = [
   {
     id: "1",
     company: {
-      name: "TechTube Productions",
-      location: "Los Angeles, California",
+      name: "Physics Wallah",
+      location: "Kolkata",
       email: "info@techtube.com",
       contact: "+1 (123) 456-7890",
       about:
-        "TechTube Productions is a leading digital media company specializing in creating engaging and informative content for tech enthusiasts worldwide. Our team is dedicated to delivering high-quality videos that entertain and educate our audience about the latest trends in technology.",
-      profileUrl: "https://fbcd.co/images/products/e72db3f2b2579e34f792ef90b15ad5da.jpg",
+        "Physics Wallah is an ed-tech YouTube channel by Alakh Pandey, providing comprehensive physics and chemistry lessons for students preparing for competitive exams like JEE and NEET.",
+      profileUrl: "https://1.bp.blogspot.com/-8tC77jRJ8T4/YGXP9Bw3ksI/AAAAAAAAEJA/EQiOSZIXI0kFZ04zIvBSOiuhT_VdfzitgCLcBGAsYHQ/s900/unnamed.jpg",
     },
     jobTitle: "Video Editor",
-    location: "Los Angeles, California",
+    location: "Delhi, India",
     jobType: "Full-Time",
     salary: "Competitive",
     detail: [
@@ -64,13 +64,13 @@ export const jobs = [
   {
     id: "2",
     company: {
-      name: "ScriptCraft Studios",
-      location: "New York City, New York",
+      name: "Technical Guruji",
+      location: "Remote",
       email: "info@scriptcraft.com",
       contact: "+1 (123) 456-7890",
       about:
-        "ScriptCraft Studios is a boutique creative agency specializing in crafting compelling narratives for digital content. Our mission is to help content creators bring their stories to life through powerful scripts that resonate with audiences.",
-      profileUrl: Google,
+        "Technical Guruji is a popular tech YouTube channel by Gaurav Chaudhary, offering reviews and insights on the latest gadgets and technology trends.",
+      profileUrl: "https://yt3.ggpht.com/-_ugo2kisZDQ/AAAAAAAAAAI/AAAAAAAAAAA/B1h15AngyW8/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
     },
     jobTitle: "Scriptwriter",
     location: "Remote",
@@ -90,16 +90,16 @@ export const jobs = [
   {
     id: "3",
     company: {
-      name: "DesignSpark Creations",
-      location: "San Francisco, California",
+      name: "Sandeep Maheshwari",
+      location: "Delhi",
       email: "info@designspark.com",
       contact: "+1 (123) 456-7890",
       about:
-        "DesignSpark Creations is a design agency dedicated to helping content creators elevate their visual branding. Our team of designers specializes in creating stunning graphics, animations, and logos that make an impact.",
-      profileUrl: Linkedin,
+        "Sandeep Maheshwari is a motivational speaker and entrepreneur, inspiring millions through his YouTube channel with life-changing seminars and motivational talks.",
+      profileUrl: "https://th.bing.com/th/id/OIP.2zPQRUM9X7kNC_4r6IF4lgHaHa?rs=1&pid=ImgDetMain",
     },
     jobTitle: "Graphic Designer",
-    location: "San Francisco, California",
+    location: "Delhi, India",
     jobType: "Full-Time",
     salary: "Competitive",
     detail: [
@@ -116,13 +116,13 @@ export const jobs = [
   {
     id: "4",
     company: {
-      name: "SocialSphere Solutions",
-      location: "Chicago, Illinois",
+      name: "Kabita's Kitchen",
+      location: "Noida",
       email: "info@socialsphere.com",
       contact: "+1 (123) 456-7890",
       about:
-        "SocialSphere Solutions is a social media management agency specializing in helping content creators grow their online presence. Our team of experts leverages cutting-edge strategies to optimize engagement and drive results across social platforms.",
-      profileUrl: "https://www.socialsphere.com",
+        "Kabita's Kitchen is a renowned YouTube channel dedicated to fantabulous cooking. Kabitaa shares delicious and easy-to-make recipes, making cooking enjoyable for everyone.",
+      profileUrl: "https://cdn.shopify.com/s/files/1/0564/8505/2483/files/Logo-png.png?height=628&pad_color=fff&v=1661424278&width=1200",
     },
     jobTitle: "Social Media Manager",
     location: "Remote",
@@ -142,16 +142,16 @@ export const jobs = [
   {
     id: "5",
     company: {
-      name: "SoundWave Studios",
-      location: "Nashville, Tennessee",
+      name: "The Viral Fever (TVF)",
+      location: "Mumbai",
       email: "info@soundwave.com",
       contact: "+1 (123) 456-7890",
       about:
-        "SoundWave Studios is a music production company dedicated to helping content creators enhance their videos with high-quality soundtracks. Our team of composers and producers create custom music tailored to fit the tone and style of each project.",
-      profileUrl: "https://www.soundwave.com",
+        "The Viral Fever (TVF) is a leading digital entertainment channel known for its web series and comedic sketches that reflect social and cultural trends in India.",
+      profileUrl: "https://i.pinimg.com/originals/eb/41/3b/eb413b043d31df8d224479e4cfbf06e1.jpg",
     },
     jobTitle: "Music Composer",
-    location: "Nashville, Tennessee",
+    location: "Mumbai, India",
     jobType: "Freelance",
     salary: "Per Project",
     detail: [
@@ -168,13 +168,13 @@ export const jobs = [
   {
     id: "6",
     company: {
-      name: "SEOBoost Consultants",
-      location: "Austin, Texas",
+      name: "Artist Shubham Dogra",
+      location: "Delhi",
       email: "info@seoboost.com",
       contact: "+1 (123) 456-7890",
       about:
-        "SEOBoost Consultants is a digital marketing agency specializing in search engine optimization (SEO) for content creators. Our team of experts helps YouTube channels rank higher in search results and attract more organic traffic.",
-      profileUrl: "https://www.seoboost.com",
+        "Shubham Dogra is an artist and YouTuber who creates beautiful and inspiring artwork. His channel showcases his artistic process, tutorials, and creative projects.",
+      profileUrl: "https://images-eu.ssl-images-amazon.com/images/S/influencer-profile-image-prod/logo/artistshubhamdogra_1631513039775_original._CR0,0,1693,1693_._FMjpg_.jpeg",
     },
     jobTitle: "SEO Specialist",
     location: "Remote",
@@ -192,82 +192,82 @@ export const jobs = [
     createdAt: new Date(),
   },
   {
-  id: "7",
-  company: {
-    name: "AnimationWorks Studios",
-    location: "Los Angeles, California",
-    email: "info@animationworks.com",
-    contact: "+1 (123) 456-7890",
-    about:
-      "AnimationWorks Studios is a leading animation studio specializing in creating captivating visuals for digital content. Our team of animators and designers brings stories to life through stunning animation and motion graphics.",
-    profileUrl: "https://www.animationworks.com",
-  },
-  jobTitle: "Animator",
-  location: "Los Angeles, California",
-  jobType: "Full-Time",
-  salary: "Competitive",
-  detail: [
-    {
-      desc: "We are seeking skilled Animators to join our creative team. As an Animator, you will collaborate with content creators to produce engaging animations and motion graphics for their YouTube videos, ranging from character animation to explainer videos.",
-      requirement:
-        "1. Proficiency in animation software such as Adobe After Effects, Maya, or Blender. \n2. Strong understanding of animation principles and techniques. \n3. Ability to work creatively within project constraints and deadlines. \n4. Portfolio showcasing your animation skills and creativity.",
+    id: "7",
+    company: {
+      name: "Pranjal Kamra",
+      location: "Raipur",
+      email: "info@motionmagic.com",
+      contact: "+1 (123) 456-7890",
+      about:
+        "Pranjal Kamra is a YouTuber and financial expert who provides valuable insights and advice on personal finance, investing, and wealth management.",
+      profileUrl: "https://yt3.ggpht.com/s-bTyc4XP0dfybkL7Cw2iKdS5RJswGTMPgdKe1mARRTUd3Kz6v-ZkZLz0FEWWk1yV6dVX2I9aA=s900-c-k-c0x00ffffff-no-rj",
     },
-  ],
-  applicants: ["1", "2", "3"],
-  vacancies: 2,
-  createdAt: new Date(),
+    jobTitle: "Motion Graphics Designer",
+    location: "Gurgaon, India",
+    jobType: "Full-Time",
+    salary: "Competitive",
+    detail: [
+      {
+        desc: "We are looking for a creative Motion Graphics Designer to join our team. As a Motion Graphics Designer, you will be responsible for creating visually stunning graphics and animations for our YouTube channel and other digital platforms.",
+        requirement:
+          "1. Proficiency in motion graphics software such as Adobe After Effects or Cinema 4D. \n2. Strong portfolio showcasing your motion graphics skills and creativity. \n3. Ability to work collaboratively in a fast-paced environment. \n4. Understanding of YouTube design trends and best practices.",
+      },
+    ],
+    applicants: ["1", "2", "3"],
+    vacancies: 2,
+    createdAt: new Date(),
   },
   {
-  id: "8",
+    id: "8",
     company: {
-    name: "Influencer Insights Agency",
-      location: "Miami, Florida",
-        email: "info@influencerinsights.com",
-          contact: "+1 (123) 456-7890",
-            about:
-    "Influencer Insights Agency is a research firm dedicated to analyzing trends and strategies in the influencer marketing industry. Our team provides valuable insights and recommendations to help content creators maximize their impact and revenue.",
-      profileUrl: "https://www.influencerinsights.com",
+      name: "Vedantu",
+      location: "Gurgaon",
+      email: "info@contentcrafted.com",
+      contact: "+1 (123) 456-7890",
+      about:
+        "Vedantu is a leading ed-tech YouTube channel providing live online classes for students of all ages. The channel covers various subjects and helps students excel academically.",
+      profileUrl: "https://asset.brandfetch.io/id-UPM-K5M/idI9LBDWy3.jpeg?updated=1646264362714",
     },
-  jobTitle: "Content Strategist",
-    location: "Remote",
-      jobType: "Full-Time",
-        salary: "Competitive",
-          detail: [
-            {
-              desc: "We are looking for a dynamic Content Strategist to join our remote team. The ideal candidate will have a passion for digital content and a deep understanding of audience engagement strategies. You will be responsible for developing content strategies for content creators on YouTube to optimize their reach and monetization.",
-              requirement:
-                "1. Proven experience in content strategy, with a focus on digital platforms such as YouTube. \n2. Strong analytical skills and the ability to interpret data to inform content decisions. \n3. Excellent understanding of audience behavior and engagement metrics. \n4. Ability to communicate complex ideas effectively and collaborate with cross-functional teams.",
-            },
-          ],
-            applicants: ["1", "2", "3", "4"],
-              vacancies: 1,
-                createdAt: new Date(),
+    jobTitle: "Content Strategist",
+    location: "In-Office, Gurgaon",
+    jobType: "Full-Time",
+    salary: "Competitive",
+    detail: [
+      {
+        desc: "We are looking for a strategic and creative Content Strategist to join our remote team. The ideal candidate will have a deep understanding of content marketing and a track record of developing successful content strategies for YouTube channels and other digital platforms.",
+        requirement:
+          "1. Proven experience in content strategy, with a focus on digital content. \n2. Strong analytical skills and the ability to interpret data to inform content strategies. \n3. Excellent written and verbal communication skills. \n4. Ability to work collaboratively with content creators and other team members.",
+      },
+    ],
+    applicants: ["1", "2", "3", "4"],
+    vacancies: 2,
+    createdAt: new Date(),
   },
   {
-  id: "9",
+    id: "9",
     company: {
-    name: "BrandBoost Marketing",
-      location: "Chicago, Illinois",
-        email: "info@brandboost.com",
-          contact: "+1 (123) 456-7890",
-            about:
-    "BrandBoost Marketing is a digital marketing agency specializing in helping brands connect with their target audience through strategic campaigns. Our team of marketers develops tailored strategies to promote content creators and increase brand awareness.",
-      profileUrl: "https://www.brandboost.com",
+      name: "Chai aur Code",
+      location: "Jaipur",
+      email: "info@visualvision.com",
+      contact: "+1 (123) 456-7890",
+      about:
+      "Hitesh Choudhary is a tech educator and YouTuber, known for his engaging tutorials on web development, programming, and other tech-related topics.",
+    profileUrl: "https://i.ytimg.com/vi/DwLTeAlG2qQ/maxresdefault.jpg",
     },
-  jobTitle: "Brand Ambassador",
-    location: "Remote",
-      jobType: "Part-Time",
-        salary: "Commission-based",
-          detail: [
-            {
-              desc: "We are seeking enthusiastic Brand Ambassadors to join our remote team. As a Brand Ambassador, you will represent our agency and promote content creators on YouTube through various channels, including social media, events, and partnerships.",
-              requirement:
-                "1. Passion for digital content and influencer marketing. \n2. Strong communication and interpersonal skills. \n3. Ability to build and maintain relationships with influencers and brands. \n4. Proactive attitude and willingness to take initiative.",
-            },
-          ],
-            applicants: ["1", "2"],
-              vacancies: 3,
-                createdAt: new Date(),
+    jobTitle: "Video Producer",
+    location: "Delhi",
+    jobType: "Full-Time",
+    salary: "Competitive",
+    detail: [
+      {
+        desc: "We are seeking an experienced Video Producer to join our creative team. The ideal candidate will have a passion for visual storytelling and a track record of producing high-quality video content for digital platforms.",
+        requirement:
+          "1. Proven experience as a Video Producer, with a portfolio of previous work. \n2. Strong understanding of video production techniques and principles. \n3. Ability to work efficiently under tight deadlines. \n4. Excellent communication and collaboration skills.",
+      },
+    ],
+    applicants: ["1", "2", "3"],
+    vacancies: 3,
+    createdAt: new Date(),
   },
 ];
 
